@@ -22,12 +22,12 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-* [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [ ] More than 4 functional game buttons
+* [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [x] More than 4 functional game buttons
 * [ ] Playback speeds up on each turn
-* [ ] Computer picks a different pattern each time the game is played
-* [ ] Player only loses after 3 mistakes (instead of on the first mistake)
+* [x] Computer picks a different pattern each time the game is played
+* [x] Player only loses after 3 mistakes (instead of on the first mistake)
 * [ ] Game button appearance change goes beyond color (e.g. add an image)
 * [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
 * [ ] User has a limited amount of time to enter their guess on each turn
@@ -54,7 +54,9 @@ guess function in general was harder than most functions as it had the most logi
 and use if else to create an easy way to understand the different options of a guess. During the implementation, the playSequence function was not working.
 I had a hard time figuring out why as it looked just like the write Up wanted me to, although it did not take long to fix, I used many console.log
 statement to make sure everything was working as it should. It turns out I had a quotation marks where there shouldn't have been and it caused it to not work.
-Using developer tools, I was able to see that fast and the console statements made sure that the playSequence was used.
+Using developer tools, I was able to see that fast and the console statements made sure that the playSequence was used. In addition, while implementing more buttons
+and the 3 lives idea, it was hard to decide whether the user would just continue from where they make the mistake or start over. I 
+decided that ultimately they should restart the pattern from the beginning rather than from where they made a mistake.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 

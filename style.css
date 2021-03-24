@@ -19,42 +19,72 @@ button{
 }
 #gameButtonArea > button{
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 100px;
   width:200px;
   height:200px;
   margin:2px;
+  border: none;
 }
 
 #button1 {
   background: lightgreen;
+  font-family: 'Courier New', monospace;
 }
 
 #button2 {
   background:lightblue;
+  font-family: 'Courier New', monospace;
 }
 
 #button3 {
   background:pink;
+  font-family: 'Courier New', monospace;
 }
 
 #button4{
   background:lightyellow;
+  font-family: 'Courier New', monospace;
+}
+
+#button5{
+  background: #DEC895;
+  font-family: 'Courier New', monospace;
+}
+
+#button6{
+  background: #D295DE;
+  font-family: 'Courier New', monospace;
 }
 
 #button1:active, #button1.lit{
   background:green;
+  font-family: 'Courier New', monospace;
 }
 #button2:active, #button2.lit{
   background:blue;
+  font-family: 'Courier New', monospace;
 }
 
 #button3:active, #button3.lit{
   background:red;
+  font-family: 'Courier New', monospace;
 }
 
 #button4:active, #button4.lit{
   background:yellow;
+  font-family: 'Courier New', monospace;
 }
+
+#button5:active, #button5.lit{
+  background:orange;
+  font-family: 'Courier New', monospace;
+}
+
+#button6:active, #button6.lit{
+  background: purple;
+  font-family: 'Courier New', monospace;
+}
+
 
 .hidden {
   display: none;

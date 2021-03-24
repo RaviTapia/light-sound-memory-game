@@ -16,7 +16,12 @@
     <h1>Light and Sound Memory Game</h1>
     
     <p>
-      Welcome to the game! Repeat the pattern back by pressing the buttons to win the game!
+      Welcome to the game! Repeat the pattern back by pressing the buttons to win the game! You get three tries only so don't make a mistake!
+      If you get it wrong, you'll have to start the pattern from the beginning!
+    </p>
+    
+    <p id="lives">
+      Mistakes: 0
     </p>
     <button id="startBtn" onclick="startGame()">
       Start
@@ -25,10 +30,12 @@
       Stop
     </button>
     <div id="gameButtonArea">
-      <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
-      <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
-      <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
-      <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
+      <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"> Green</button>
+      <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"> Blue </button>
+      <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"> Red </button>
+      <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"> Yellow </button>
+      <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"> Orange </button>
+      <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone()"> Purple </button>
       
     </div>
   </body>
