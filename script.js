@@ -4,6 +4,7 @@ var guessCounter = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;
+var tries = 0;
 const clueHoldTime = 1000;
 const cluePauseTime = 333;
 const nextClueWaitTime = 1000;
@@ -13,6 +14,8 @@ function startGame(){
   gamePlaying = true;
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  pattern = randomPattern();
+  console.log(pattern);
   playClueSequence();
 }
 
@@ -20,6 +23,9 @@ function stopGame(){
   gamePlaying = false;
   document.getElementById("stopBtn").classList.add("hidden");
   document.getElementById("startBtn").classList.remove("hidden");
+  document.getElementById("lives").innerText ="Mistakes: 0"
+  tries = 0;
+  
 }
 
 function loseGame(){
@@ -32,13 +38,24 @@ function winGame(){
   alert("Game Over. You won!");
 }
 
+function randomPattern(){
+  let temp = [];
+  for(let i = 0; i < 8; i++){
+    temp.push(Math.floor((Math.random()*6) + 1 ));
+  }
+  return temp;
+}
+
 // Sound Synthesis Functions
 const freqMap = {
   1: 261.6,
   2: 329.6,
   3: 392,
-  4: 466.2
+  4: 466.2,
+  5: 530.2,
+  6: 590.5
 }
+
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
   g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
@@ -104,7 +121,14 @@ function guess(btn){
   }
   
   if(pattern[guessCounter] != btn){ //the guess was incorrect
-    loseGame();
+    tries++;
+    document.getElementById("lives").innerText = "Mistakes: " + (tries);
+    if( tries < 3){ //incorrect but was not third mistake
+      alert("Mistake: " + (tries));
+      guessCounter = 0; //will have to do pattern from the beginning.
+    } else {  //was their third mistake
+      loseGame();
+    }
   }else if(guessCounter !=  progress){ // the guess was correct but turn is not over
     guessCounter++;
   }else if( progress < pattern.length-1 ){ //guess was correct, turn is over, but is not last turn
